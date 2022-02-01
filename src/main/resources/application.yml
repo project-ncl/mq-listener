@@ -2,6 +2,8 @@
   quarkus:
     kubernetes-config:
       enabled: true
+      secrets:
+        enabled: true
 queue:
   topic: "queue-topic"
   key-store-location: /location
@@ -10,7 +12,7 @@ quarkus:
   package:
     type: uber-jar
   kubernetes-config:
-    config-maps: queue-listener-configuration
+    config-maps: mq-listener
   qpid-jms:
     url: "amqps://localhost:5671"
   http:
