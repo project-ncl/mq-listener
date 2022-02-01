@@ -1,0 +1,20 @@
+%prod:
+   quarkus:
+     kubernetes-config:
+       secrets:
+         enabled: true
+queue:
+  topic: "queue-topic"
+  key-store-location: /location
+  key-store-password: changeit
+quarkus:
+  kubernetes-config:
+    config-maps: queue-listener-configuration
+  qpid-jms:
+    url: "amqps://localhost:5671"
+  http:
+    port: 8080
+  log:
+    category:
+      "org.jboss.pnc":
+        level: DEBUG
