@@ -1,6 +1,7 @@
 # Maven
 target/
 settings.xml
+.mvn/wrapper/maven-wrapper.jar
 
 # Eclipse
 .project

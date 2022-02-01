@@ -1,13 +1,14 @@
-%prod:
-   quarkus:
-     kubernetes-config:
-       secrets:
-         enabled: true
+"%cloud":
+  quarkus:
+    kubernetes-config:
+      enabled: true
 queue:
   topic: "queue-topic"
   key-store-location: /location
   key-store-password: changeit
 quarkus:
+  package:
+    type: uber-jar
   kubernetes-config:
     config-maps: queue-listener-configuration
   qpid-jms:
