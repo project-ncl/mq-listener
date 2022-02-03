@@ -65,8 +65,8 @@ public class QueueListener implements Runnable {
                     // receive returns `null` if the JMSConsumer is closed
                     return;
                 }
-                LOG.info("Got a message: " + message.getBody(String.class));
                 lastMessage = om.readValue(message.getBody(String.class), BuildStatusChanged.class);
+                LOG.info("Got a message: " +  om.writerWithDefaultPrettyPrinter().writeValueAsString(lastMessage));
         }
         } catch (Exception e) {
             LOG.error(e);
